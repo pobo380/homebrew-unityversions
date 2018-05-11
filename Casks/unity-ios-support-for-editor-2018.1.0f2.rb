@@ -1,14 +1,14 @@
-cask 'unity-webgl-support-for-editor@2018.1.0f2' do
+cask 'unity-ios-support-for-editor-2018.1.0f2' do
   version '2018.1.0f2,d4d99f31acba'
-  sha256 'c24ca52f86b3bbaeef6ee771528907aef6406e8eceeac8ccf8b1186b255d2eb0'
+  sha256 'd92a030e233b6efe18569488094985a2e2082c1b6785bfef49c197eda9908095'
 
-  url "http://netstorage.unity3d.com/unity/#{version.after_comma}/MacEditorTargetInstaller/UnitySetup-WebGL-Support-for-Editor-#{version.before_comma}.pkg"
-  name 'Unity WebGL Build Support'
+  url "http://netstorage.unity3d.com/unity/#{version.after_comma}/MacEditorTargetInstaller/UnitySetup-iOS-Support-for-Editor-#{version.before_comma}.pkg"
+  name 'Unity iOS Build Support'
   homepage 'https://unity3d.com/unity/'
 
-  depends_on cask: 'unity@2018.1.0f2'
+  depends_on cask: 'unity-2018.1.0f2'
 
-  pkg "UnitySetup-WebGL-Support-for-Editor-#{version.before_comma}.pkg"
+  pkg "UnitySetup-iOS-Support-for-Editor-#{version.before_comma}.pkg"
 
   preflight do
     if File.exist? '/Applications/Unity'
@@ -50,5 +50,5 @@ cask 'unity-webgl-support-for-editor@2018.1.0f2' do
     end
   end
 
-  uninstall pkgutil: 'com.unity3d.WebGLSupport'
+  uninstall pkgutil: 'com.unity3d.iOSSupport'
 end

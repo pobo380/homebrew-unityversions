@@ -1,14 +1,14 @@
-cask 'unity-android-support-for-editor@2018.1.0f2' do
+cask 'unity-webgl-support-for-editor-2018.1.0f2' do
   version '2018.1.0f2,d4d99f31acba'
-  sha256 '048019a219200ba63926e5fe64ce7820da8e1062443f994e8287218b2c73c748'
+  sha256 'c24ca52f86b3bbaeef6ee771528907aef6406e8eceeac8ccf8b1186b255d2eb0'
 
-  url "http://netstorage.unity3d.com/unity/#{version.after_comma}/MacEditorTargetInstaller/UnitySetup-Android-Support-for-Editor-#{version.before_comma}.pkg"
-  name 'Unity Android Build Support'
+  url "http://netstorage.unity3d.com/unity/#{version.after_comma}/MacEditorTargetInstaller/UnitySetup-WebGL-Support-for-Editor-#{version.before_comma}.pkg"
+  name 'Unity WebGL Build Support'
   homepage 'https://unity3d.com/unity/'
 
-  depends_on cask: 'unity@2018.1.0f2'
+  depends_on cask: 'unity-2018.1.0f2'
 
-  pkg "UnitySetup-Android-Support-for-Editor-#{version.before_comma}.pkg"
+  pkg "UnitySetup-WebGL-Support-for-Editor-#{version.before_comma}.pkg"
 
   preflight do
     if File.exist? '/Applications/Unity'
@@ -50,5 +50,5 @@ cask 'unity-android-support-for-editor@2018.1.0f2' do
     end
   end
 
-  uninstall pkgutil: 'com.unity3d.AndroidPlayer'
+  uninstall pkgutil: 'com.unity3d.WebGLSupport'
 end

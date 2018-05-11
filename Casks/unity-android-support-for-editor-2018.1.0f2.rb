@@ -1,14 +1,14 @@
-cask 'unity-ios-support-for-editor@2018.1.0f2' do
+cask 'unity-android-support-for-editor-2018.1.0f2' do
   version '2018.1.0f2,d4d99f31acba'
-  sha256 'd92a030e233b6efe18569488094985a2e2082c1b6785bfef49c197eda9908095'
+  sha256 '048019a219200ba63926e5fe64ce7820da8e1062443f994e8287218b2c73c748'
 
-  url "http://netstorage.unity3d.com/unity/#{version.after_comma}/MacEditorTargetInstaller/UnitySetup-iOS-Support-for-Editor-#{version.before_comma}.pkg"
-  name 'Unity iOS Build Support'
+  url "http://netstorage.unity3d.com/unity/#{version.after_comma}/MacEditorTargetInstaller/UnitySetup-Android-Support-for-Editor-#{version.before_comma}.pkg"
+  name 'Unity Android Build Support'
   homepage 'https://unity3d.com/unity/'
 
-  depends_on cask: 'unity@2018.1.0f2'
+  depends_on cask: 'unity-2018.1.0f2'
 
-  pkg "UnitySetup-iOS-Support-for-Editor-#{version.before_comma}.pkg"
+  pkg "UnitySetup-Android-Support-for-Editor-#{version.before_comma}.pkg"
 
   preflight do
     if File.exist? '/Applications/Unity'
@@ -50,5 +50,5 @@ cask 'unity-ios-support-for-editor@2018.1.0f2' do
     end
   end
 
-  uninstall pkgutil: 'com.unity3d.iOSSupport'
+  uninstall pkgutil: 'com.unity3d.AndroidPlayer'
 end

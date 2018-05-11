@@ -6,7 +6,7 @@ cask 'unity-standard-assets@2018.1.0f2' do
   name 'Unity Standard Assets'
   homepage 'https://unity3d.com/unity'
 
-  depends_on cask: 'unity@2018.1.0f2'
+  depends_on cask: 'unity-2018.1.0f2'
 
   pkg "StandardAssets-#{version.before_comma}.pkg"
 
